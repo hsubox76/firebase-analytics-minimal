@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firebase Analytics Minimal Setup</title>
+  </head>
+  <body>
+    <h1>Firebase Analytics Minimal Setup</h1>
+
+    <p>To check if the client is sending events to the server:</p>
+    <ol>
+      <li>
+        Open your browser's Developer Tools panel.
+      </li>
+      <li>
+        Go to the Network tab.
+      </li>
+      <li>
+        Refresh this page.
+      </li>
+      <li>
+        Look for a network POST request (it will be delayed a few seconds after
+        page load) to "https://www.google-analytics.com/g/collect?... (plus a
+        lot of params)"
+      </li>
+    </ol>
+
+    <hr />
+    <p>
+      If that network request is <strong>successful</strong> (200, 204),
+      Firebase analytics is sending events. One of the params should be
+      "en=page_view". This event is automatically sent on page view even if you
+      did not explicitly log an event with Firebase Analytics.
+    </p>
+    <p>
+      If that network request is <strong>not there</strong>, or was
+      <strong>unsuccessful</strong>, please let us know as much detail as
+      possible about the browser environment you checked this page from.
+    </p>
+    <script src="main.js"></script>
+  </body>
+</html>
